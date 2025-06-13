@@ -329,11 +329,11 @@ button#theme-toggle {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-/* Label text like "About:", "Made by:", etc. */
 .label {
-  color: #2ecc71; /* Bright green */
+  color: #f1c40f; /* Bright yellow */
   font-weight: bold;
 }
+
 
 /* Modpack name links */
 .modpack-name a {
@@ -366,6 +366,58 @@ button#theme-toggle {
 }
 
 /* Mod entry card */
+.mod-entry {
+  margin: 2rem 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+/* Labels like "About:", "Made by:", "Version:" */
+.label {
+  color: #f1c40f; /* Bright yellow */
+  font-weight: bold;
+}
+
+/* Version info text (normal white) */
+.version-info {
+  color: white;
+  font-weight: normal;
+}
+
+/* Mod name styling */
+.modpack-name a {
+  font-size: 1.4rem;
+  color: #2ecc71; /* green */
+  text-decoration: none;
+  font-weight: bold;
+}
+.modpack-name a:hover {
+  text-decoration: underline;
+}
+
+/* Author links */
+.author-anakama {
+  color: #2ecc71; /* green */
+  text-decoration: none;
+  font-weight: bold;
+}
+.author-anakama:hover {
+  text-decoration: underline;
+}
+
+.author-xdf {
+  color: #c084fc; /* purple */
+  text-decoration: none;
+  font-weight: bold;
+}
+.author-xdf:hover {
+  text-decoration: underline;
+}
+
+/* Mod entry container styling */
 .mod-entry {
   margin: 2rem 0;
   background-color: rgba(255, 255, 255, 0.05);
