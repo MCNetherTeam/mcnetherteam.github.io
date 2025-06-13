@@ -426,3 +426,22 @@ button#theme-toggle {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   text-align: left;
 }
+
+.skin-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.skin-container div {
+  text-align: center;
+}
+
+.skin-container img {
+  border-radius: 15px;
+  width: 150px;
+  height: auto;
+}
