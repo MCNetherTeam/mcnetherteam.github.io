@@ -1,2 +1,1 @@
-# mcnetherteam.github.io
-WEBSITE / IGNORE
+# WEBSITE, IGNORE
