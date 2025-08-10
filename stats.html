@@ -31,6 +31,37 @@
     </nav>
   </header>
   
+  <script>
+  async function fetchProjectsDownloads(projects) {
+  return projects.reduce((sum, proj) => sum + (proj.downloads || 0), 0);
+}
+
+async function fetchUserDownloads(userId, elementId) {
+  try {
+    const res = await fetch(`https://api.modrinth.com/v2/user/${userId}/projects`);
+    const data = await res.json();
+    const totalDownloads = await fetchProjectsDownloads(data);
+    document.getElementById(elementId).textContent = totalDownloads.toLocaleString();
+  } catch {
+    document.getElementById(elementId).textContent = 'Error';
+  }
+}
+
+async function fetchTeamDownloads(teamId, elementId) {
+  try {
+    const res = await fetch(`https://api.modrinth.com/v2/team/${teamId}/projects`);
+    const data = await res.json();
+    const totalDownloads = await fetchProjectsDownloads(data);
+    document.getElementById(elementId).textContent = totalDownloads.toLocaleString();
+  } catch {
+    document.getElementById(elementId).textContent = 'Error';
+  }
+}
+
+fetchUserDownloads('Anakama', 'downloads-anakama');
+fetchTeamDownloads('netherteam', 'downloads-combine');
+
+  </script>
 <section class="container">
   <h1>Statistics</h1>
 
@@ -56,6 +87,11 @@
   </ul>
 </div>
 
+  <h2>User Downloads</h2>
+<ul class="no-bullets">
+  <li><strong>AnakamaTH:</strong> <span id="downloads-anakama">Loading...</span></li>
+  <li><strong>xdf_:</strong> Transferred all of his projects to the Organization.</li>
+</ul>
 </section>
 
 

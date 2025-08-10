@@ -104,3 +104,41 @@ function colorizeDownloads(elementId) {
   }
 }
 
+
+async function getTotalDownloadsForProjects(projectIds) {
+  let total = 0;
+  for (const id of projectIds) {
+    try {
+      const res = await fetch(`https://api.modrinth.com/v2/project/${id}`);
+      if (!res.ok) throw new Error(`Failed to fetch project ${id}`);
+      const data = await res.json();
+      total += data.downloads || 0;
+    } catch (e) {
+      console.error(`Error fetching project ${id}:`, e);
+    }
+  }
+  return total;
+}
+
+async function fetchCombinedDownloads() {
+  try {
+    const userRes = await fetch('https://api.modrinth.com/v2/user/Anakama/project_ids');
+    if (!userRes.ok) throw new Error('Failed to fetch user projects');
+    const userProjects = await userRes.json();
+
+    const orgRes = await fetch('https://api.modrinth.com/v2/organization/netherteam/project_ids');
+    if (!orgRes.ok) throw new Error('Failed to fetch organization projects');
+    const orgProjects = await orgRes.json();
+
+    const userTotal = await getTotalDownloadsForProjects(userProjects);
+    const orgTotal = await getTotalDownloadsForProjects(orgProjects);
+
+    document.getElementById('downloads-anakama').textContent = userTotal.toLocaleString();
+    document.getElementById('downloads-combine').textContent = orgTotal.toLocaleString();
+  } catch (error) {
+    console.error(error);
+    document.getElementById('downloads-combine').textContent = 'Error';
+  }
+}
+
+fetchCombinedDownloads();
