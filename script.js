@@ -103,3 +103,4 @@ function colorizeDownloads(elementId) {
     el.style.color = 'red';
   }
 }
+
