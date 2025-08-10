@@ -44,3 +44,62 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
   });
 });
+
+async function fetchDownloads(projectId, elementId) {
+  try {
+    const response = await fetch(`https://api.modrinth.com/v2/project/${projectId}`);
+    if (!response.ok) throw new Error('Network response was not ok');
+    const data = await response.json();
+    const downloads = data.downloads.toLocaleString();
+    const el = document.getElementById(elementId);
+    el.textContent = downloads;
+    colorizeDownloads(elementId);
+  } catch (error) {
+    console.error(`Failed to fetch downloads for ${projectId}:`, error);
+    const el = document.getElementById(elementId);
+    el.textContent = 'Error';
+    el.style.color = 'gray';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mods = [
+    'fullbrightgamerule',
+    'rickroll-mod-fabric',
+    'illegal-craftings',
+    'illegal-craftings-fabric',
+    'rickroll-mod',
+    'from-the-nether',
+    'from-the-nether-expansion-pack'
+  ];
+
+  const modpacks = [
+    'vanillairl',
+    'bedrock-edition-modpack',
+    'bedrock-edition',
+    'faster-performance',
+    'faster-quality'
+  ];
+
+  mods.forEach(id => fetchDownloads(id, `downloads-${id}`));
+  modpacks.forEach(id => fetchDownloads(id, `downloads-${id}`));
+});
+
+function colorizeDownloads(elementId) {
+  const el = document.getElementById(elementId);
+  const text = el.textContent.replace(/,/g, '');
+  const count = parseInt(text, 10);
+
+  if (isNaN(count)) {
+    el.style.color = 'gray';
+    return;
+  }
+
+  if (count >= 1000) {
+    el.style.color = 'limegreen';
+  } else if (count >= 100) {
+    el.style.color = 'orange';
+  } else {
+    el.style.color = 'red';
+  }
+}
