@@ -482,3 +482,20 @@ button#theme-toggle {
 #sortModsBtn:active {
   transform: translateY(0);
 }
+
+#download-links .mod-entry {
+  margin: 0.3em 0;
+  font-family: 'Minecraftia', monospace, sans-serif;
+  font-size: 1.2rem;
+}
+
+#download-links .mod-entry a {
+  color: #61dafb;  /* cool blue */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#download-links .mod-entry a:hover {
+  color: #21a1f1;
+  text-decoration: underline;
+}
