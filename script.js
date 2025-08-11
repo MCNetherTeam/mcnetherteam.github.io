@@ -166,3 +166,4 @@ document.addEventListener('DOMContentLoaded', () => {
     sortBtn.textContent = ascending ? "Sort A-Z" : "Sort Z-A";
   });
 });
+
