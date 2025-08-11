@@ -141,6 +141,7 @@ async function fetchCombinedDownloads() {
   }
 }
 
+
 fetchCombinedDownloads();
 
 document.addEventListener('DOMContentLoaded', () => {
