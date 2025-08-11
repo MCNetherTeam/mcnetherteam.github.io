@@ -445,3 +445,12 @@ button#theme-toggle {
   width: 150px;
   height: auto;
 }
+
+.seriousfreezing {
+  color: #FFA500; /* Orange */
+  text-decoration: none;
+  font-weight: bold;
+}
+.author-xdf:hover {
+  text-decoration: underline;
+}
