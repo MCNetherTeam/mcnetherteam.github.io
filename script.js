@@ -142,3 +142,27 @@ async function fetchCombinedDownloads() {
 }
 
 fetchCombinedDownloads();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sortBtn = document.getElementById('sortModsBtn');
+  let ascending = true; // start with A-Z
+
+  sortBtn.addEventListener('click', () => {
+    const container = document.querySelector('section.container');
+    const mods = Array.from(container.querySelectorAll('div.mod-entry'));
+
+    mods.sort((a, b) => {
+      const nameA = a.querySelector('h3.modpack-name a').textContent.trim().toLowerCase();
+      const nameB = b.querySelector('h3.modpack-name a').textContent.trim().toLowerCase();
+
+      return ascending ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+    });
+
+    mods.forEach(mod => mod.remove());
+    mods.forEach(mod => container.appendChild(mod));
+
+    ascending = !ascending; // flip sort order for next click thing
+
+    sortBtn.textContent = ascending ? "Sort A-Z" : "Sort Z-A";
+  });
+});

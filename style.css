@@ -456,3 +456,29 @@ button#theme-toggle {
 .seriousfreezing:hover {
   text-decoration: underline;
 }
+
+#sortModsBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-family: 'Minecraftia', monospace, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  user-select: none;
+  outline-offset: 2px;
+  outline-color: transparent;
+}
+
+#sortModsBtn:hover,
+#sortModsBtn:focus {
+  transform: translateY(-2px);
+  outline-color: #2ecc71;
+}
+
+#sortModsBtn:active {
+  transform: translateY(0);
+}
