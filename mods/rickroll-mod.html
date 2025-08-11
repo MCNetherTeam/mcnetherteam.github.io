@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The NetherTeam - Mods - Rickroll Mod Download</title>
+
+  <link rel="stylesheet" href="../style.css" />
+  <script defer src="../script.js"></script>
+  <link rel="icon" type="image/png" href="../favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The NetherTeam - Rickroll Mod" />
+  <meta property="og:description" content="Rickroll Mod mod download links." />
+  <meta property="og:image" content="https://mcnetherteam.github.io/logo.png" />
+  <meta property="og:url" content="https://mcnetherteam.github.io/mods/illegal-craftings" />
+  <meta name="twitter:card" content="logo.png" />
+</head>
+<body class="mc-theme">
+  <div class="overlay" style="background-image: url('https://i.imgur.com/2T0D8uU.png');"></div>
+
+  <header>
+    <div class="logo">The NetherTeam</div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../modpacks.html">Modpacks</a>
+      <a href="../mods.html" aria-current="page">Mods</a>
+      <a href="../resourcepacks.html">Resource Packs</a>
+      <a href="../stats.html">Stats</a>
+    </nav>
+  </header>
+
+  <section class="container">
+    <h1>Rickroll Mod - Download</h1>
+    <h2>Choose your loader</h2>
+
+    <div id="download-links"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 The NetherTeam, AnakamaTH</p>
+  </footer>
+
+  <script>
+    const downloads = [
+      {
+        platform: "Modrinth",
+        mods: [
+          {
+            name: "Forge",
+            url: "https://modrinth.com/mod/rickroll-mod"
+          },
+          {
+            name: "Fabric",
+            url: "https://modrinth.com/mod/rickroll-mod-fabric"
+          }
+        ]
+      }
+    ];
+
+    const container = document.getElementById("download-links");
+
+    downloads.forEach(platform => {
+      const platformSection = document.createElement("div");
+      platformSection.classList.add("platform-section");
+
+      const h3 = document.createElement("h3");
+      h3.textContent = platform.platform;
+      platformSection.appendChild(h3);
+
+      platform.mods.forEach(mod => {
+        const modDiv = document.createElement("div");
+        modDiv.classList.add("mod-entry");
+
+        const a = document.createElement("a");
+        a.href = mod.url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = mod.name;
+
+        modDiv.appendChild(a);
+        platformSection.appendChild(modDiv);
+      });
+
+      container.appendChild(platformSection);
+    });
+  </script>
+  
+    <!-- yeah not my script, I have to mention this because I do not wanna lie about it or something or you guys being misunderstood -->
+	
+</body>
+</html>
