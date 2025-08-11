@@ -446,11 +446,13 @@ button#theme-toggle {
   height: auto;
 }
 
+/* had to add his color why not */
+
 .seriousfreezing {
   color: #FFA500; /* Orange */
   text-decoration: none;
   font-weight: bold;
 }
-.author-xdf:hover {
+.seriousfreezing:hover {
   text-decoration: underline;
 }
