@@ -500,7 +500,6 @@ button#theme-toggle {
   text-decoration: underline;
 }
 
- /* IF I AINT BLIND IT SAYS ORANGE AND RED */
  
 #downloads-anakama {
   color: #FFA500;
@@ -508,4 +507,22 @@ button#theme-toggle {
 
 #downloads-xdf_ {
   color: #FF0000;
+}
+
+.modpacks {
+  color: #7a0e0d; /* netherrack and red mixed */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.mods {
+  color: #7a0e0d; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.user {
+  color: #7a0e0d; 
+  text-decoration: none;
+  font-weight: bold;
 }

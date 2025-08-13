@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'bedrock-edition-modpack',
     'bedrock-edition',
     'faster-performance',
+	'dungeons-java',
     'faster-quality'
   ];
 
