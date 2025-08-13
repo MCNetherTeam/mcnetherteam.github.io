@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mods = [
     'fullbrightgamerule',
     'rickroll-mod-fabric',
+    'oldsplashtexts',
     'illegal-craftings',
     'illegal-craftings-fabric',
     'rickroll-mod',
