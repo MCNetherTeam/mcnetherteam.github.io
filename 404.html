@@ -1,7 +1,21 @@
-<script>
-  window.location.href = "https://netherteam.pages.dev";
+<head>
+<title>NetherTeam</title>
+</head>
+<body>
+  <script>
+  const path = window.location.pathname + window.location.search + window.location.hash;
+  window.location.replace("https://netherteam.pages.dev" + path);
 </script>
 
+<p>Redirecting...</p>
+
+<noscript>
+  <div class="no-js-warning">
+    <p><strong>JavaScript is disabled.</strong></p>
+    <p>This site is avalible on <a href="https://anakama.xyz">anakama.xyz</a>.</p>
+    <p>Please manually go there.</p>
+  </div>
+</noscript>
 <style>
 .no-js-warning {
   max-width: 640px;
@@ -22,11 +36,4 @@
   font-weight: 600;
 }
 </style>
-
-<noscript>
-  <div class="no-js-warning">
-    <p><strong>JavaScript is disabled.</strong></p>
-    <p>This site is avalible on <a href="https://netherteam.pages.dev">netherteam.pages.dev</a> and it requires JavaScript to work properly.</p>
-    <p>Please manually go there.</p>
-  </div>
-</noscript>
+</body>  
